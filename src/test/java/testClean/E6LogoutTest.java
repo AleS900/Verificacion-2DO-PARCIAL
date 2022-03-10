@@ -3,9 +3,9 @@ package testClean;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import pagesTodoly.LoginModal;
 import pagesTodoly.MainPage;
 import pagesTodoly.MenuSection;
-import pagesTodoly.LoginModal;
 
 public class E6LogoutTest extends BaseTodoLy {
     MainPage mainPage = new MainPage();
@@ -16,10 +16,15 @@ public class E6LogoutTest extends BaseTodoLy {
 
     @Test
     public void verifySignUp() throws InterruptedException {
-        // Sign Up
-        mainPage.signInImage.click();
+        // Login
+        mainPage.loginImage.click();
         loginModal.login(email,password);
         Thread.sleep(5000);
         Assertions.assertTrue(menuSection.logoutButton.isControlDisplayed(), "ERROR, no se pudo hacer el login");
+
+        // Logout
+        menuSection.logoutButton.click();
+        Thread.sleep(5000);
+        Assertions.assertTrue(mainPage.loginImage.isControlDisplayed(), "ERROR, no se pudo hacer el logout");
     }
 }
