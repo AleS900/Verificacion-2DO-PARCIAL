@@ -14,6 +14,7 @@ import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 
+import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
 public class MyStepClean {
@@ -66,6 +67,11 @@ public class MyStepClean {
     public void iSaveAnAttributeOFTheResponseInAVariable(String property, String var) {
         dynamicVar.put(var,response.then().extract().path(property)+"");
 
+    }
+
+    @When("I send a DELETE request with {} to {}")
+    public void iSendADeleteRequestWithATokenToAnAPI(String token, String url) {
+        response = given().header("Token", replaceVar(token)).when().delete(Configuration.host + url);
     }
 
     @And("the attribute {} should be {}")
