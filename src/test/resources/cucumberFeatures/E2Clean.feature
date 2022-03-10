@@ -40,7 +40,7 @@ Feature: Create a project, then create, edit and delete an item in Todo.ly
     When I use the POST request to /api/items.json with the body
     """
     {
-        "Content":"FirstItem",
+        "Content":"E2Project",
         "ProjectId": E2_Project_Id
     }
     """
@@ -49,7 +49,7 @@ Feature: Create a project, then create, edit and delete an item in Todo.ly
     """
     {
         "Id": "IGNORE",
-        "Content": "FirstItem",
+        "Content": "E2Project",
         "ItemType": "IGNORE",
         "Checked": false,
         "ProjectId": E2_Project_Id,
