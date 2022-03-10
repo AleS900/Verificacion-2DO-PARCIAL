@@ -11,18 +11,18 @@ Feature: Create a Token and then delete the Token
     And the expected body should be
     """
     {
-    "TokenString": token_str,
-    "UserEmail": "santiavctf@gmail.com",
-    "ExpirationTime": "IGNORE"
-}
+        "TokenString": token_str,
+        "UserEmail": "santiavctf@gmail.com",
+        "ExpirationTime": "IGNORE"
+    }
     """
     When I send a DELETE request with token_str to /api/authentication/token.json
     Then the code that I receive should be 200
     And the expected body should be
     """
     {
-    "TokenString": token_str,
-    "UserEmail": "santiavctf@gmail.com",
-    "ExpirationTime": "IGNORE"
+        "TokenString": token_str,
+        "UserEmail": "santiavctf@gmail.com",
+        "ExpirationTime": "IGNORE"
     }
     """

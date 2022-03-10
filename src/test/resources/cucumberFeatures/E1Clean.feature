@@ -1,10 +1,12 @@
 Feature: Create and update a user in Todo.ly
   Scenario: create and update the user
     Given I use none authentication
+
+
     When I use the POST request to /api/user.json with the body
     """
     {
-        "Email": "santitest116@gmail.com",
+        "Email": "santitest12tt@gmail.com",
         "FullName": "Santiago Vargas",
         "Password": "Santiago123"
     }
@@ -14,7 +16,7 @@ Feature: Create and update a user in Todo.ly
     """
     {
         "Id": "IGNORE",
-        "Email": "santitest116@gmail.com",
+        "Email": "santitest12tt@gmail.com",
         "Password": null,
         "FullName": "Santiago Vargas",
         "TimeZone": 0,
@@ -28,7 +30,9 @@ Feature: Create and update a user in Todo.ly
         "TimeZoneId": "IGNORE"
     }
     """
-    When I update in /api/user.json with the user santitest116@gmail.com, the password Santiago123 and the body
+
+
+    When I update in /api/user.json with the user santitest12tt@gmail.com, the password Santiago123 and the body
     """
     {
         "FullName": "Alejandro Vargas"
